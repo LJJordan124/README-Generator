@@ -9,33 +9,34 @@ function renderLicenseBadge(license) {
 
 // Function to generate markdown for README
 function generateMarkdown(data) {
-  return `# ${data.title}
+  return `## ${data.title}
   ${renderLicenseBadge(data.license)}
 
   ## Description
   ${data.description}
+
   ## Deployed Application URL
   ${data.link}
+
   ## Screenshot
   ![alt-text](${data.screenshot})
-  ## Table of Contents
-  * [Features](#features)
-  * [Languages & Dependencies](#languagesanddependencies)
-  * [How to Use This Application](#HowtoUseThisApplication)
-  * [Contributors](#contributors)
-  * [Testing](#testing)
-  * [Questions](#questions)
+
   ## Features
   ${data.features}
+
+  ## Future Plans
+  ${data.plans} 
+
   ## Languages & Dependencies
   ${data.require}
-  ## How to Use This Application:
+
+  ## Built With:
   ${data.usage}
-  ## Contributors
+
+  ## Contributors:
   ${data.contributors}
-  ## Testing
-  ${data.test}
-  ## Questions
+
+  ## Questions - Contact Me
     - [My GitHub Profile](https://github.com/${github})
     - Email: ${email}
 

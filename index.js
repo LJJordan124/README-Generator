@@ -12,9 +12,20 @@ const questions = [
         message: "Please name your Project."
     },
     {
+        type: "checkbox",
+        name: "license",
+        message: "Please select a license applicable to this project.",
+        choices: ["MIT", "APACHE2.0", "Boost1.0", "MPL2.0", "BSD2", "BSD3", "none"],
+    },
+    {
         type: "input",
         name: "description",
         message: "Please describe the purpose and functionality of this project.",
+    },
+    {
+        type: "input",
+        name: "link",
+        message: "Please provide a URL where a user can access your deployed application."
     },
     {
         type: "input",
@@ -23,24 +34,13 @@ const questions = [
     },
     {
         type: "input",
-        name: "link",
-        message: "Please provide a URL where a user can access your deployed application."
-    },
-    {
-        type: "checkbox",
-        name: "license",
-        message: "Please select a license applicable to this project.",
-        choices: ["MIT", "APACHE2.0", "Boost1.0", "MPL2.0", "BSD2", "BSD3", "none"],
-    },
-    {
-        type: "input",
-        name: "require",
-        message: "List any project dependencies here.",
-    },
-    {
-        type: "input",
         name: "features",
         message: "List some cool features about this project here.",
+    },
+    {
+        type: "input",
+        name: "plans",
+        message: "List some cool features you want to include later on in the project.",
     },
     {
         type: "input",
@@ -49,13 +49,8 @@ const questions = [
     },
     {
         type: "input",
-        name: "creator",
-        message: "Write your GitHub username.",
-    },
-    {
-        type: "input",
-        name: "email",
-        message: "Provide a valid email address.",
+        name: "require",
+        message: "List any project dependencies here.",
     },
     {
         type: "input",
@@ -65,8 +60,13 @@ const questions = [
     },
     {
         type: "input",
-        name: "test",
-        message: "Provide walkthrough of required tests if applicable.",
+        name: "github",
+        message: "Write your GitHub username.",
+    },
+    {
+        type: "input",
+        name: "email",
+        message: "Provide a valid email address.",
     },
 ];
 

@@ -9,14 +9,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/dopecello/readme-generator.git"
+    "url": "git+https://github.com/LJJordan124/README-generator.git"
   },
-  "author": "",
+  "author": "LJJordan124",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/dopecello/readme-generator/issues"
+    "url": "https://github.com/LJJordan124/README-generator/issues"
   },
-  "homepage": "https://github.com/dopecello/readme-generator#readme",
+  "homepage": "https://github.com/LJJordan124/README-generator#readme",
   "dependencies": {
     "inquirer": "^8.2.4"
   }
