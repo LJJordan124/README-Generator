@@ -1,45 +1,79 @@
-// Function that returns a license badge based on which license is passed in
-// If there is no license, return an empty string
+// Fucntion that grabs the badge img for each license. If "None" is selected, then it will return an empty string.
 function renderLicenseBadge(license) {
-  if (license !== "none") {
-    return `![Github license](https://img.shields.io/badge/license-${license}-blue.svg)`;
+  if (license == "MIT") {
+    return "https://img.shields.io/badge/License-MIT-yellow.svg";
+  } else {
+    if (license == "Apache") {
+      return "https://img.shields.io/badge/License-Apache_2.0-blue.svg";
+    } else {
+      if (license == "GPL") {
+        return "https://img.shields.io/badge/License-GPLv3-blue.svg";
+      }
+    }
   }
-  return "";
 }
 
-// Function to generate markdown for README
-function generateMarkdown(data) {
-  return `## ${data.title}
-  ${renderLicenseBadge(data.license)}
+// Function that grabs the license link for users to learn more. If "None" is selected, then it will return an empty string.
+function renderLicenseLink(license) {
+  if (license == "MIT") {
+    return "https://opensource.org/licenses/MIT";
+  } else {
+    if (license == "Apache") {
+      return "https://opensource.org/licenses/Apache-2.0";
+    } else {
+      if (license == "GPL") {
+        return "https://www.gnu.org/licenses/gpl-3.0";
+      }
+    }
+  }
+}
 
-  ## Description
-  ${data.description}
+// Function that renders the license sections. If "None" is selected, then it will return an empty string.
+function renderLicenseSection(license) {
+  if (license == "None") {
+    return "";
+  }
 
-  ## Deployed Application URL
-  ${data.link}
+  return `[![License: ${license}](${renderLicenseBadge(
+    license
+  )})](${renderLicenseLink(license)})`;
+}
 
-  ## Screenshot
-  ![alt-text](${data.screenshot})
+// Function that generates markdown for README
+function generateMarkdown({
+  title,
+  description,
+  installation,
+  usage,
+  license,
+  contributions,
+  github,
+  email,
+}) {
+  return `# ${title}
 
-  ## Features
-  ${data.features}
+## Description
+${description}
 
-  ## Future Plans
-  ${data.plans} 
+## Installation
+Packages that are required to successfully run this program are ${installation}
 
-  ## Languages & Dependencies
-  ${data.require}
+## Usage
+Ways in which this program can be used: ${usage}
 
-  ## Built With:
-  ${data.usage}
+## License
+${renderLicenseSection(license)}
+<br>
+The license for this program is ${license}
 
-  ## Contributors:
-  ${data.contributors}
 
-  ## Questions - Contact Me
-    - [My GitHub Profile](https://github.com/${github})
-    - Email: ${email}
+## Contributors
+Those who helped develop this program are ${contributions}
 
+## Contact
+GitHub: ${github}
+<br>
+Email: ${email}
 `;
 }
 
